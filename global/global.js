@@ -20,7 +20,6 @@ async function GetSongFromRandomArtist() {  // funzione che fetcha randomicament
             const result = await response.json()
 
             check = result.data
-            console.log(check)
 
         } while ((check.length === 0))
 

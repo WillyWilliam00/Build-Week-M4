@@ -14,7 +14,6 @@ async function loadData(id) {
       document.querySelector(".dot-pulse").classList.remove("d-none")
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`)
       const data = await response.json()
-      console.log(data)
       return data
     } catch (error) {
       console.log(error)
@@ -46,7 +45,6 @@ async function loadData(id) {
 
   function displayArtist (data) {
     
-    console.log(data)
           cont.innerHTML = /*html*/` 
                         
                           <img class="sfondo-img" src="${data.picture_xl}" alt="">  
@@ -112,9 +110,7 @@ async function loadData(id) {
     function displayPlaylist (data) {
 
       const song = data.data
-      console.log(song)
       
-      console.log(data)
             contenuto.innerHTML = song.map(song => /*html*/` 
             
               <li class="list-group-item">
@@ -239,7 +235,6 @@ let check  // X SIDEBAR
  async function GetAlbum() { 
          const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
          const result = await response.json()
-         console.log(result)
          return result
        
     } 
@@ -253,7 +248,6 @@ try {
     const response = await  fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${number}/top?limit=10`)
     const result = await response.json()
     check = result.data 
-    console.log(check)
     } while ((check.length === 0))
     return check
     }

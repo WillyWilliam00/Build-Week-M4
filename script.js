@@ -93,7 +93,7 @@ function displayFavorites(result, nodeHtml){
 
     for (let i = 0; i < 6; i++) {
         const song = songs[i]
-console.log(song)
+ 
         nodeHtml.innerHTML += /*html*/`
                         <div id="${song.artist.id}" class="greetings-card my-1 border-0 rounded" >
                             <div class="row ">
@@ -159,7 +159,7 @@ function displayResults(result, nodeHtml) {
 
 const today = new Date();
 const hours = today.getUTCHours();
-console.log (hours)
+ 
 
 
 //   <p class="card-text">${timeStampFromDuration(result.duration)}</p>

@@ -10,7 +10,6 @@ async function GetAlbum() {
     document.querySelector(".dot-pulse").classList.remove("d-none")
     const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
     const result = await response.json()
-    console.log(result)
     return result
 
 }
@@ -144,7 +143,7 @@ function DisplayAlbum(AlbumData) {
 }
 
 async function DisplayTableSong(AlbumData) {
-    
+
 
     AlbumData.tracks.data.forEach((song, i) => {
         if (i >= 9) {
@@ -219,9 +218,9 @@ async function DisplayTableSong(AlbumData) {
 
 
 async function DisplayInPlayer(ArtistTitle, SongTitle, Duration, AlbumImage) {
-    const image =  document.querySelector(".img-album-song")
+    const image = document.querySelector(".img-album-song")
     const titleSong = document.querySelector(".title .title-player")
-    const  artist = document.querySelector(".title .artist-player")
+    const artist = document.querySelector(".title .artist-player")
     const duration = document.querySelector(".playBar p:last-of-type")
 
     image.innerHTML = `<img src="${AlbumImage}"
@@ -247,7 +246,6 @@ function toggleIcon() {
 
     const tabelsong = document.querySelector('.table-song');
     const icon = document.querySelector('.button-top-main');
-    console.log(tabelsong.getBoundingClientRect().top)
     if (tabelsong.getBoundingClientRect().top <= 100) {
         icon.classList.replace('opacity-0', 'opacity-100');
     } else {
